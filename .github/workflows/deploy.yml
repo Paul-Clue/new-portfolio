@@ -26,7 +26,7 @@ jobs:
           # Replace placeholders with actual secrets
           sed -i 's/%%PASSWORD%%/${{ secrets.PASSWORD }}/g' ./index.html
           # Compile Sass to CSS
-          npx sass styles.scss styles.css
+          # npx sass styles.scss styles.css
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
