@@ -30,8 +30,8 @@ jobs:
           # Compile Sass to CSS
           # npx sass styles.scss styles.css
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      # - name: Deploy to GitHub Pages
+      #   uses: peaceiris/actions-gh-pages@v3
 
       - name: Deploy
         env:
