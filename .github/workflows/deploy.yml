@@ -27,10 +27,8 @@ jobs:
         run: |
           # Replace placeholders with actual secrets
           sed -i 's/%%PASSWORD%%/${{ secrets.EMAIL_SECRET }}/g' ./index.html
-          # sed -i 's/%%PASSWORD%%/YO/g' ./index.html
-          echo ${{ secrets.EMAIL_SECRET }} | sed 's/./& /g'
-          # Compile Sass to CSS
-          # npx sass styles.scss styles.css
+          sed -i 's/%%SERVICE_ID%%/${{ secrets.SERVICE_SECRET }}/g' ./emailer.js
+          sed -i 's/%%TEMPLATE_ID%%/${{ secrets.TEMPLATE_SECRET }}/g' ./emailer.js
 
       - name: List Environment Variables
         run: env

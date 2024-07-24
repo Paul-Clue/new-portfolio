@@ -2,8 +2,7 @@
 
 // Initialize EmailJS
 // emailjs.init("%%PUBLIC_KEY%%");
-const key = "%%PUBLIC_KEY%%";
-console.log(key);
+
 emailjs.init({
   publicKey: '%%PASSWORD%%',
   // Do not allow headless browsers
