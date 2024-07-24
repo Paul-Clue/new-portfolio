@@ -29,6 +29,9 @@ jobs:
           # Compile Sass to CSS
           # npx sass styles.scss styles.css
 
+      - name: List Environment Variables
+        run: env
+
       - name: Debug index.html
         run: cat ./index.html
 
