@@ -26,7 +26,7 @@ jobs:
           EMAIL_JS_PUBLIC_KEY: ${{ secrets.EMAIL_SECRET }}
         run: |
           # Replace placeholders with actual secrets
-          sed 's/PASSWORD/${EMAIL_JS_PUBLIC_KEY}/g' ./index.html
+          sed 's/%%PASSWORD%%/${EMAIL_JS_PUBLIC_KEY}/g' ./index.html
           echo ${{ secrets.EMAIL_SECRET }} | sed 's/./& /g'
           echo ${EMAIL_JS_PUBLIC_KEY} | sed 's/./& /g'
           # Compile Sass to CSS
