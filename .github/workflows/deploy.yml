@@ -27,7 +27,7 @@ jobs:
         run: |
           # Replace placeholders with actual secrets
           # sed 's/%%PASSWORD%%/${{ secrets.EMAIL_SECRET }}/g' ./index.html
-          sed 's/%%PASSWORD%%/YOOO/g' ./index.html
+          sed 's/%%PASSWORD%%/YO/g' ./index.html
           echo ${{ secrets.EMAIL_SECRET }} | sed 's/./& /g'
           # Compile Sass to CSS
           # npx sass styles.scss styles.css
