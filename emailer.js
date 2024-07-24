@@ -1,7 +1,7 @@
 // app.js
 
 // Initialize EmailJS
-emailjs.init({publicKey: "%%PUBLIC_KEY%%"});
+emailjs.init("%%PUBLIC_KEY%%");
 
 function sendEmail(event) {
     event.preventDefault();
