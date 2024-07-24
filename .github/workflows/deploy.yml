@@ -22,7 +22,8 @@ jobs:
 
       - name: Inject Secrets and Build
         env:
-          EMAIL_JS_PUBLIC_KEY: ${{ secrets.EMAIL_JS_PUBLIC_KEY }}
+          # EMAIL_JS_PUBLIC_KEY: ${{ secrets.EMAIL_JS_PUBLIC_KEY }}
+          EMAIL_JS_PUBLIC_KEY: ${{ secrets.EMAIL_SECRET }}
         run: |
           # Replace placeholders with actual secrets
           sed -i "s/%%PASSWORD%%/${EMAIL_JS_PUBLIC_KEY}/g" ./index.html
