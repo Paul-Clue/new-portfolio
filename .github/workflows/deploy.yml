@@ -23,7 +23,7 @@ jobs:
       - name: Inject Secrets and Build
         run: |
           # Replace placeholders with actual secrets
-          sed -i 's/%%PASSWORD%%/${{ secrets.EMAIL_JS_PUBLIC_KEY }}g' ./index.html
+          sed -i "s/%%PASSWORD%%/${{ secrets.EMAIL_JS_PUBLIC_KEY }}/g" ./index.html
           # Compile Sass to CSS
           # npx sass styles.scss styles.css
 
