@@ -31,12 +31,15 @@ jobs:
         #   # npx sass styles.scss styles.css
         run: sed -i '' 's/%%PUBLIC_KEY%%/${{ secrets.EMAIL_JS_PUBLIC_KEY }}/g' ../../index.html
 
+      - name: Debug index.html
+        run: cat ../../index.html
+
        - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GH_TOKEN }}
-          publish_dir: ./
-          exclude_files: ".github/**"
+         uses: peaceiris/actions-gh-pages@v3
+         with:
+           github_token: ${{ secrets.GH_TOKEN }}
+           publish_dir: ./
+           exclude_files: ".github/**"
 
       # - name: Deploy
       #   env:
