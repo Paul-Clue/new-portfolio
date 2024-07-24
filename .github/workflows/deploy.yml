@@ -21,12 +21,12 @@ jobs:
         run: npm install
 
       - name: Inject Secrets and Build
-        env:
+        # env:
           # EMAIL_JS_PUBLIC_KEY: ${{ secrets.EMAIL_JS_PUBLIC_KEY }}
-          EMAIL_JS_PUBLIC_KEY: ${{ secrets.EMAIL_SECRET }}
+          # EMAIL_JS_PUBLIC_KEY: ${{ secrets.EMAIL_SECRET }}
         run: |
           # Replace placeholders with actual secrets
-          sed -i 's/%%PASSWORD%%/${{ secrets.EMAIL_SECRET }}/g' ./emailer.js
+          sed -i 's/%%USER_ID%%/${{ secrets.EMAIL_SECRET }}/g' ./emailer.js
           sed -i 's/%%SERVICE_ID%%/${{ secrets.SERVICE_SECRET }}/g' ./emailer.js
           sed -i 's/%%TEMPLATE_ID%%/${{ secrets.TEMPLATE_SECRET }}/g' ./emailer.js
 

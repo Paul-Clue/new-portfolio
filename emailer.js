@@ -4,7 +4,7 @@
 // emailjs.init("%%PUBLIC_KEY%%");
 
 emailjs.init({
-  publicKey: '%%PASSWORD%%',
+  publicKey: '%%USER_ID%%',
   // Do not allow headless browsers
   blockHeadless: true,
   blockList: {
