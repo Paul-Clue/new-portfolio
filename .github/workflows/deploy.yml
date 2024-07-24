@@ -21,9 +21,11 @@ jobs:
         run: npm install
 
       - name: Inject Secrets and Build
+        env:
+          EMAIL_JS_PUBLIC_KEY: ${{ secrets.EMAIL_JS_PUBLIC_KEY }}
         run: |
           # Replace placeholders with actual secrets
-          sed -i "s/%%PASSWORD%%/${{ secrets.EMAIL_JS_PUBLIC_KEY }}/g" ./index.html
+          sed -i "s/%%PASSWORD%%/${EMAIL_JS_PUBLIC_KEY}/g" ./index.html
           # Compile Sass to CSS
           # npx sass styles.scss styles.css
 
