@@ -11,34 +11,28 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
           node-version: '16'
+
       - name: Install Dependencies
         run: npm install
+
       - name: Inject Secrets and Build
         run: |
           # Replace placeholders with actual secrets
-          sed -i 's/%%PASSWORD%%/${{ secrets.EMAIL_JS_PUBLIC_KEY }}/g' ./index.html
+          sed -i '' 's/%%PASSWORD%%/${{ secrets.EMAIL_JS_PUBLIC_KEY }}/g' ./index.html
           # Compile Sass to CSS
           # npx sass styles.scss styles.css
-      - name: Debug index.html
-        run: cat ../../index.html
-       - name: Deploy to GitHub Pages
-         uses: peaceiris/actions-gh-pages@v3
-         with:
-           github_token: ${{ secrets.GH_TOKEN }}
-           publish_dir: ./
-           exclude_files: ".github/**"
 
-      # - name: Deploy
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GH_TOKEN }} # Access the secret here
-      #   run: |
-      #     git config user.name "GitHub Actions"
-      #     git config user.email "actions@github.com"
-      #     git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/Paul-Clue/new-portfolio.git
-      #     git add .
-      #     git commit -m "Deploy from GitHub Actions"
-      #     git push origin main
+      - name: Debug index.html
+        run: cat ./index.html
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
+          publish_dir: ./
+          exclude_files: ".github/**"
