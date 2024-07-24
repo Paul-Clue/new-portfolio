@@ -27,6 +27,19 @@
 
       gtag('config', 'G-5FGB0CV2E2');
     </script>
+    <!-- <script
+      type="text/javascript"
+      src="https://cdn.emailjs.com/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init('YOUR_USER_ID'); // Initialize EmailJS with your user ID
+      })();
+    </script> -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
   </head>
 
   <body class="is-preload">
@@ -39,7 +52,8 @@
             alt="A portrait of a software developer named Paul Clue"
         /></a>
         <h1>
-          <strong>Software Engineer &nbsp;</strong> I design, develop, test, and maintain software applications.<br />
+          <strong>Software Engineer &nbsp;</strong> I design, develop, test, and
+          maintain software applications.<br />
           <!-- crafted by <a href="http://html5up.net">HTML5 UP</a>. -->
         </h1>
       </div>
@@ -53,7 +67,11 @@
           <h2>Paul Clue Is The Best</h2>
         </header>
         <p>
-          I love working with good teams made up of good people, teams that value graciousness, collaboration and inclusion. My last employer was a small agency that specializes in socially-conscious projects, and has a long history contributing to web standards like HTML and JavaScript.
+          I love working with good teams made up of good people, teams that
+          value graciousness, collaboration and inclusion. My last employer was
+          a small agency that specializes in socially-conscious projects, and
+          has a long history contributing to web standards like HTML and
+          JavaScript.
         </p>
         <ul class="actions">
           <li><a href="#" class="button">Learn More</a></li>
@@ -122,7 +140,7 @@
         </p>
         <div class="row">
           <div class="col-8 col-12-small">
-						<!--edit: form-->
+            <!--edit: form-->
             <form id="contactForm" method="post" action="#">
               <div class="row gtr-uniform gtr-50">
                 <div class="col-6 col-12-xsmall">
@@ -145,9 +163,9 @@
                   ></textarea>
                 </div>
               </div>
-							<ul class="actions">
-								<li><input type="submit" value="Send Message" /></li>
-							</ul>
+              <ul class="actions">
+                <li><input type="submit" value="Send Message" /></li>
+              </ul>
             </form>
           </div>
           <div class="col-4 col-12-small">
@@ -505,12 +523,18 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
             >
           </li> -->
           <li>
-            <a href="https://github.com/Paul-Clue" target="_blank" class="icon brands fa-github"
+            <a
+              href="https://github.com/Paul-Clue"
+              target="_blank"
+              class="icon brands fa-github"
               ><span class="label">Github</span></a
             >
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/paul-clue/" target="_blank" class="icon brands fa-linkedin"
+            <a
+              href="https://www.linkedin.com/in/paul-clue/"
+              target="_blank"
+              class="icon brands fa-linkedin"
               ><span class="label">LinkedIn</span></a
             >
           </li>
@@ -539,36 +563,66 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
-		<!--edit: mailer-->
-		<script>
-			document.getElementById("contactForm").addEventListener("submit", async (event) => {
-				event.preventDefault();
-			
-				const name = document.getElementById("name").value;
-				const email = document.getElementById("email").value;
-				const message = document.getElementById("message").value;
-			
-				try {
-					// const response = await fetch("http://localhost:5500/send-email", {
-					const response = await fetch("https://paulclue.com/send-email", {
-						method: "POST",
-						headers: {
-							"Content-Type": "application/json",
-						},
-						body: JSON.stringify({ name, email, message }),
-					});
+    <!--edit: mailer-->
+    <!-- <script>
+      // Function to send an email
+      function sendEmail(event) {
+        event.preventDefault(); // Prevent default form submission behavior
 
-					console.log("response", response)
-			
-					if (response.ok) {
-						alert("Email sent successfully!");
-					} else {
-						alert("Failed to send email Client.");
-					}
-				} catch (error) {
-					alert("An error occurred. Please try again.");
-				}
-			});
-			</script>
+        // Collect form data
+        const serviceID = '%%PASSWORD_SERVICE%%'; // Replace with your EmailJS service ID
+        const templateID = '%%PASSWORD_TEMPLATE%%'; // Replace with your EmailJS template ID
+
+        const templateParams = {
+          name: document.getElementById('name').value,
+          email: document.getElementById('email').value,
+          message: document.getElementById('message').value,
+        };
+
+        // Use EmailJS to send the email
+        emailjs
+          .send(serviceID, templateID, templateParams)
+          .then((response) => {
+            console.log(
+              'Email sent successfully!',
+              response.status,
+              response.text
+            );
+            alert('Email sent successfully!');
+          })
+          .catch((error) => {
+            console.error('Failed to send email.', error);
+            alert('Failed to send email.');
+          });
+      }
+
+      // Attach event listener to the form
+      document
+        .getElementById('contactForm')
+        .addEventListener('submit', sendEmail);
+    </script> -->
+
+    <!-- <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: '%%PUBLIC_KEY%%',
+          // Do not allow headless browsers
+          blockHeadless: true,
+          blockList: {
+            // Block the suspended emails
+            list: ['foo@emailjs.com', 'bar@emailjs.com'],
+            // The variable contains the email address
+            watchVariable: 'userEmail',
+          },
+          limitRate: {
+            // Set the limit rate for the application
+            id: 'app',
+            // Allow 1 request per 10s
+            throttle: 5000,
+          },
+        });
+      })();
+    </script> -->
+		<script  type="text/javascript" src="emailer.js"></script>
   </body>
 </html>
