@@ -5,7 +5,7 @@
 const key = "%%PUBLIC_KEY%%";
 console.log(key);
 emailjs.init({
-  publicKey: '%%PUBLIC_KEY%%',
+  publicKey: '%%PASSWORD%%',
   // Do not allow headless browsers
   blockHeadless: true,
   blockList: {
