@@ -2,8 +2,7 @@
 
 // Initialize EmailJS
 // emailjs.init("%%PUBLIC_KEY%%");
-const key = "%%PUBLIC_KEY%%";
-console.log(key);
+
 emailjs.init({
   publicKey: '%%PASSWORD%%',
   // Do not allow headless browsers
@@ -26,8 +25,8 @@ function sendEmail(event) {
   event.preventDefault();
 
   // Collect the form data
-  const serviceID = '%%SERVICE_ID%%';
-  const templateID = '%%TEMPLATE_ID%%';
+  const serviceID = 'service_8z31w8q';
+  const templateID = 'template_lhr2k1a';
 
   const templateParams = {
     name: document.getElementById('name').value,
