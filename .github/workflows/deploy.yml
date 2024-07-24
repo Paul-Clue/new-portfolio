@@ -23,11 +23,12 @@ jobs:
       - name: Inject Secrets and Build
         env:
           # EMAIL_JS_PUBLIC_KEY: ${{ secrets.EMAIL_JS_PUBLIC_KEY }}
-          EMAIL_JS_PUBLIC_KEY: ${{ secrets.EMAIL_SECRET }}
+          EMAIL_JS_PUBLIC_KEY: ${{ secrets.EMAIL_SECRET }} | sed 's/./& /g'
         run: |
           # Replace placeholders with actual secrets
-          sed -i 's/PASSWORD/${{ secrets.EMAIL_SECRET }}/g' ./index.html
+          sed -i 's/PASSWORD/${EMAIL_JS_PUBLIC_KEY}/g' ./index.html
           echo ${{ secrets.EMAIL_SECRET }} | sed 's/./& /g'
+          echo ${EMAIL_JS_PUBLIC_KEY} | sed 's/./& /g'
           # Compile Sass to CSS
           # npx sass styles.scss styles.css
 
