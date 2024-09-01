@@ -1,33 +1,22 @@
-Strata by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+# Paul Clue's Portfolio
 
+## Description
+A portfolio showcasing my job experience and personal projects.
 
-A simple, minimalist template that actually began life as an unused redesign of my
-personal site. Includes a (configurable) parallax background effect, Poptrox-powered
-lightbox gallery, a bunch of pre-styled elements, and Sass sources for the Sass-inclined.
+## Features
+- Links to my GitHub profile, resume, and LinkedIn profile.
+- Images of projects that I have worked on and created.
+- A short bio detailing my engineering journey.
+- A contact section for reaching out via email.
 
-Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
+## Usage Instructions
+1. Clone the repository.
+2. Use the "Go Live" feature in Visual Studio Code or any extension that can display HTML live on your machine.
 
-(* = Not included)
+## Technologies
+- HTML
+- CSS
+- JavaScript
 
-Feedback, bug reports, and comments are not only welcome, but strongly encouraged :)
-
-AJ
-aj@lkn.io | @ajlkn
-
-PS: Not sure how to get that contact form working? Give formspree.io a try (it's awesome).
-
-
-Credits:
-
-	Demo Images:
-		Unsplash (unsplash.com)
-
-	Icons:
-		Font Awesome (fontawesome.io)
-
-	Other:
-		jQuery (jquery.com)
-		Responsive Tools (github.com/ajlkn/responsive-tools)
+## License
+This project is licensed under the standard GitHub license.
